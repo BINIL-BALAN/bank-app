@@ -1,0 +1,44 @@
+<app-header></app-header>
+
+<div class="container-fluid mt-5">
+  <h2>Register Form</h2>
+  <p>
+    This is Dummy Content:Filler text is text that shares some characteristics
+    of a real written text, but is random or otherwise generated. It may be used
+    to display a sample of fonts, generate text for testing, or to spoof an
+    e-mail spam filte
+  </p>
+</div>
+  <div class="row">
+     
+     <div class="col-4 mt-5">
+      <img class=" ml-5" src="./../../assets/—Pngtree—young service boy vector download_5257569.png" alt="" width="300px">
+      <div class="mt-3 ml-5">
+        <button  type="button" class="ml-5 btn btn-warning">Back</button>
+      </div>
+     </div>
+     <div class="col-5  ">
+        <form (ngSubmit)="register()" [formGroup]="registerForm" class=" p-5 mt-3 me-5 " action="">
+            <div class="form-floating mb-3" >
+                <label for="">User Name</label>
+                <input name="uname" formControlName="uname" type="text" placeholder="User name" id="floatingPassword" type="text" class="form-control">
+                <div class="text-danger mt-2" *ngIf="this.registerForm.get('uname')?.errors&&this.registerForm.get('uname')?.touched">Invalid username</div>
+            </div>
+            <div class="form-floating mb-3" >
+                <label for="">Account Number</label>
+                <input name="acno" formControlName="acno" type="text" placeholder="Account number" id="floatingPassword" type="text" class="form-control">
+                <div class="text-danger mt-2" *ngIf="this.registerForm.get('acno')?.errors&&this.registerForm.get('acno')?.touched">Invalid accoun number</div>
+            </div>
+            <div class="form-floating">
+                <label for="">Password</label>
+
+                <input name="pswd" formControlName="pswd" type="text" placeholder="Password" id="floatingPassword" type="password" class="form-control">
+                <div class="text-danger mt-2" *ngIf="this.registerForm.get('pswd')?.errors&&this.registerForm.get('pswd')?.touched">Invalid password</div>
+            </div>
+            <div class="mt-4">
+                <button type="submit" class="btn btn-primary">Register</button>&nbsp; 
+                <p class="mt-2">Already a user ? Click here to <a routerLink="/">Login</a></p>
+            </div>
+        </form>
+    </div>
+  </div>

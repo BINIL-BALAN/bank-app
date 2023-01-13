@@ -1,0 +1,79 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="col-lg-10">
+        <a class="navbar-brand" routerLink="dashboard">
+            <img
+              src="./../../assets/wallet.png"
+              width="30"
+              height="30"
+              class="d-inline-block align-top"
+              alt=""
+            />
+            &nbsp;
+            Bankist
+          </a>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Services
+          </a>
+          <ul class="dropdown-menu" >
+            <li><a class="dropdown-item" href="#">Fund Transfer</a></li>
+            <li><a class="dropdown-item"  data-bs-toggle="offcanvas" href="#offcanvasExample">Balance Enquiry</a></li>
+            <a class="dropdown-item" href="#">Mini statement</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#"><li class="fa fa-solid fa-trash mr-2"></li>My Account</a>
+            <a class="dropdown-item" href="#"><li class="fa fa-solid fa-right-from-bracket mr-2"></li>Logout</a>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <!--------------------------Dashboard design------------------------------------>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h1 style="margin-top: 100px;" class="">Welcome {{user}}</h1>
+            <label for="" style="text-align: justify;">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took 
+            </label>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                </div>
+            </div>
+            <button (click)="collapse()"   class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              Read <span *ngIf="isCollapse">More</span>
+              <span *ngIf="!isCollapse">Less</span>
+              </button>
+        </div>
+        <div class="col-md-8">
+            <img class="ml-5 mt-3" height="500px"  src="./../../assets/—Pngtree—financial management mobile banking revenue_5780265.png" alt="">
+        </div>
+    </div>
+</div>
+
+<!----------------offcanse baqlance enquiry------------------->
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Balance enquiry</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      <h5>Hello </h5>
+      Your current balance is : <strong></strong>
+    </div>
+  </div>
+</div>

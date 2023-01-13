@@ -1,0 +1,38 @@
+<app-header></app-header>
+<!-- login page -->
+<div class="row ">
+    <div class="col-6 text-center">
+         <!-- image -->
+          <img class="mt-5" height="500px"  src="./../../assets/—Pngtree—financial management mobile banking revenue_5780265.png" alt="">
+    </div>
+    
+
+    <div class="col-5 mt-5 ">
+        <form (ngSubmit)="login()" [formGroup]="loginForm" class=" p-5 mt-5 me-5 " action="">
+            <div class="form-floating mb-3" >
+                <label for="">Account Number</label>
+                <input name="acno" formControlName="acno" type="text" placeholder="Account number" id="floatingPassword" type="text" class="form-control">
+                <div class="text-danger mt-2" *ngIf="this.loginForm.get('acno')?.errors&&this.loginForm.get('acno')?.touched">Invalid account number</div>
+            </div>
+            <div class="form-floating">
+                <label for="">Password</label>
+
+                <input name="pswd" formControlName="pswd" type="text" placeholder="Account number" id="floatingPassword" type="password" class="form-control">
+                <div class="text-danger mt-2" *ngIf="this.loginForm.get('pswd')?.errors&&this.loginForm.get('pswd')?.touched">Invalid password</div>
+            </div>
+            <div class="text-danger">
+                {{errorMsg}}
+            </div>
+            <div class="mt-4">
+
+                <button type="submit" class="btn btn-primary">
+                    Login
+                    <span *ngIf="successMsg" class="spinner-border text-light" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </span>
+                </button>&nbsp; 
+                <p class="mt-2">New User ? Click here to <a routerLink="/register">Register</a></p>
+            </div>
+        </form>
+    </div>
+</div>
