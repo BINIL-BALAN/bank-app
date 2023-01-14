@@ -5,20 +5,28 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
-  //login
+ //login
+  {
+    path:'',
+    redirectTo:'bankapp/login',
+    pathMatch:'full'
+  },
   //http://localhost:4200/
   {
-    path:'',component:LoginComponent
+    path:'bankapp/login',
+    component:LoginComponent
   },
   //Register
   //http://localhost:4200/register
   {
-    path:'register',component:RegisterComponent
+    path:'bankapp/register',
+    component:RegisterComponent
   },
   //Dashboard
   //http://localhost:4200/dashboard
   {
-    path:'dashboard',component:DashboardComponent
+    path:'bankapp/dashboard',
+    component:DashboardComponent
   }
 ];
 
